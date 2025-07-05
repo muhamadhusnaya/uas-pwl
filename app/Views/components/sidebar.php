@@ -36,9 +36,9 @@
             </li>
             <li class="menu-item">
               <a
-                href="keranjang" class="menu-link">
+                href="order" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-cart"></i>
-                <div class="text-truncate" data-i18n="Email">Cart</div>
+                <div class="text-truncate" data-i18n="Email">Order</div>
               </a>
             </li>
 
