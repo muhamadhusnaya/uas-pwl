@@ -86,6 +86,9 @@ phpunit
 #-------------------------
 vendor/
 
+# Jangan abaikan vendor di dalam public/assets
+!public/sneat-bootstrap-html-admin-template-free-v3.0.0/sneat-bootstrap-html-admin-template-free/assets
+
 #-------------------------
 # IDE / Development Files
 #-------------------------
