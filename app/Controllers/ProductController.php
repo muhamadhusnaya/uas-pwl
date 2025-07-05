@@ -12,8 +12,8 @@ class ProductController extends BaseController
         return view('admin/produk');
     }
     
-    public function keranjang()
+    public function order()
     {
-        return view('admin/keranjang');
+        return view('admin/order');
     }
 }

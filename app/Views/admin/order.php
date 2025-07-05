@@ -3,16 +3,9 @@
 
 <div class="container-xxl flex-grow-1 container-p-y">
     <div class="card">
-                <h5 class="card-header">Product</h5>
+                <h5 class="card-header">Order</h5>
                 
                 <div class="table-responsive text-nowrap">
-                        <button type="button" class="btn rounded-pill btn-outline-secondary">
-                            <span class="icon-base bx bx-plus icon-sm me-2"></span>Tambah
-                        </button>
-                        <button type="button" class="btn rounded-pill btn-outline-secondary">
-                            <span class="icon-base bx bx-download icon-sm me-2"></span>Clear Cart
-                        </button>
-
                         <div class="demo-inline-spacing">
                             <table class="table">
                     <thead class="table-light">
@@ -70,9 +63,9 @@
                     </tr>
                 </tbody>
             </table>
-                        </div>
+          </div>
         </div>
-    </div>
+      </div>
 </div>
     
 <?= $this->endSection() ?>
