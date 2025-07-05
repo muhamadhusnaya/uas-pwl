@@ -22,21 +22,21 @@
             <!-- Dashboards -->
             <li class="menu-item">
               <a
-                href="test" class="menu-link">
+                href="dashboard" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-home-smile"></i>
                 <div class="text-truncate" data-i18n="Email">Dashboard</div>
               </a>
             </li>
             <li class="menu-item">
               <a
-                href="/produk" class="menu-link">
+                href="produk" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-store"></i>
                 <div class="text-truncate" data-i18n="Email">Product</div>
               </a>
             </li>
             <li class="menu-item">
               <a
-                href="/keranjang" class="menu-link">
+                href="keranjang" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-cart"></i>
                 <div class="text-truncate" data-i18n="Email">Cart</div>
               </a>
