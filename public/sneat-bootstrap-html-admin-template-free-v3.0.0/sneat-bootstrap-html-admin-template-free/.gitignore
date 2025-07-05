@@ -50,7 +50,8 @@ gulpfile.tmp.*
 /temp
 
 # Assets
-
+# **/assets/vendor
+# **/static/vendor
 
 # HTML files
 !/html/*
