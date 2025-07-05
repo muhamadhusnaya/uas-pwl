@@ -21,7 +21,7 @@
               <h4 class="mb-1">Welcome to Organicstation! 👋</h4>
               <p class="mb-6">Please sign-in to your account</p>
 
-              <form id="formAuthentication" class="mb-6" action="dashboard">
+              <form id="formAuthentication" class="mb-6" action="home">
                 <div class="mb-6">
                   <label for="email" class="form-label">Email or Username</label>
                   <input
