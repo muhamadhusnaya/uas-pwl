@@ -9,7 +9,7 @@
             <p class="card-text">
             Rp150000
             </p>
-            <a href="javascript:void(0)" class="btn btn-outline-primary">Add to Cart</a>
+            <a href="" class="btn btn-outline-primary">Add to Cart</a>
         </div>
         </div>
     </div>

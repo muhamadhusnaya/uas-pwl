@@ -17,3 +17,4 @@ $routes->get('/produk', 'ProductController::produk');
 
 $routes->get('/home', 'Home::home');
 $routes->get('/order', 'ProductController::order');
+$routes->get('/keranjang', 'ProductController::keranjang');

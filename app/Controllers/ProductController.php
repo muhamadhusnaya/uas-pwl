@@ -16,4 +16,8 @@ class ProductController extends BaseController
     {
         return view('admin/order');
     }
+    public function keranjang(): string
+    {
+        return view('user/keranjang');
+    }
 }

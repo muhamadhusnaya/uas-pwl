@@ -35,7 +35,7 @@
                         <div class="navbar-nav me-auto">
                             <a class="nav-item nav-link active" href="home">🏠︎ Home</a>
                             <a class="nav-item nav-link"> | </a>
-                            <a class="nav-item nav-link" href="javascript:void(0)">🛒 Cart</a>
+                            <a class="nav-item nav-link" href="keranjang">🛒 Cart</a>
                         </div>
                         </div>
                     </div>
