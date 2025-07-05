@@ -14,4 +14,6 @@ $routes->get('/login-user', 'AuthController::viewLoginUser');
 $routes->get('/register-user', 'AuthController::viewRegisterUser');
 
 $routes->get('/produk', 'ProductController::produk');
+
+$routes->get('/home', 'Home::home');
 $routes->get('/order', 'ProductController::order');
