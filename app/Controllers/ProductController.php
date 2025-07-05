@@ -9,10 +9,11 @@ class ProductController extends BaseController
 {
     public function produk()
     {
-        return view('produk');
+        return view('admin/produk');
     }
+    
     public function keranjang()
     {
-        return view('keranjang');
+        return view('admin/keranjang');
     }
 }
