@@ -17,7 +17,7 @@
                   <input
                     type="text"
                     class="form-control border-0 shadow-none ps-1 ps-sm-2 d-md-block d-none"
-                    placeholder="Searchsneat-bootstrap-html-admin-template-free-v3.0.0/Searchsneat-bootstrap-html-admin-template-free."
+                    placeholder="Search"
                     aria-label="Searchsneat-bootstrap-html-admin-template-free-v3.0.0/Searchsneat-bootstrap-html-admin-template-free." />
                 </div>
               </div>

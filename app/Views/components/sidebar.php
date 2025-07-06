@@ -4,7 +4,7 @@
   ?>
         <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
           <div class="app-brand demo">
-            <a href="index.html" class="app-brand-link">
+            <a href="dashboard" class="app-brand-link">
               <span class="app-brand-logo demo">
                 <img src="img/OrganicstationLogo.png" style="width : 40px">
               </span>

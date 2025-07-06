@@ -11,11 +11,22 @@
                   <input
                     type="text"
                     class="form-control border-0 shadow-none ps-1 ps-sm-2 d-md-block d-none"
-                    placeholder="Searchsneat-bootstrap-html-admin-template-free-v3.0.0/sneat-bootstrap-html-admin-template-free."
+                    placeholder="Search"
                     aria-label="Searchsneat-bootstrap-html-admin-template-free-v3.0.0/sneat-bootstrap-html-admin-template-free." />
                 </div>
               </div>
               <!-- /Search -->
+
+              <!-- Logo -->
+              <div class="app-brand justify-content-center">
+                <a href="home" class="app-brand-link gap-2">
+                  <span class="app-brand-logo demo">
+                    <img src="img/OrganicstationLogo.png" alt="" style="width: 50px">
+                  </span>
+                  <span class="app-brand-text demo text-heading fw-bold">Organicstation</span>
+                </a>
+              </div>
+              <!-- /Logo -->
 
               <ul class="navbar-nav flex-row align-items-center ms-md-auto">
                 <!-- Place this tag where you want the button to render. -->
