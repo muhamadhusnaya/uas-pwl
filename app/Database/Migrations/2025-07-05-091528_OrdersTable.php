@@ -16,26 +16,26 @@ class OrdersTable extends Migration
                 'unsigned'       => true,
                 'auto_increment' => true,
             ],
+            // Kolom dari sistem Anda
             'order_number' => [
                 'type'       => 'VARCHAR',
                 'constraint' => '100',
                 'unique'     => true,
             ],
-            // Sebaiknya ada user_id jika Anda memiliki sistem login pengguna
             'user_id' => [
                 'type'       => 'INT',
                 'constraint' => 11,
                 'unsigned'   => true,
-                'null'       => true, // Izinkan null jika ada guest checkout
+                'null'       => true,
             ],
-            'customer_name' => [ // Menyimpan nama customer saat checkout
+            'customer_name' => [
                 'type'       => 'VARCHAR',
                 'constraint' => '255',
             ],
             'shipping_address' => [
                 'type' => 'TEXT',
             ],
-            'total_price' => [ // Total harga semua item + ongkir
+            'grand_total' => [ // Total harga semua item + ongkir
                 'type'       => 'DECIMAL',
                 'constraint' => '15,2',
             ],
@@ -43,10 +43,30 @@ class OrdersTable extends Migration
                 'type'       => 'DECIMAL',
                 'constraint' => '10,2',
             ],
-            'status' => [
-                'type'       => 'ENUM',
-                'constraint' => ['pending', 'paid', 'processing', 'shipped', 'completed', 'cancelled'],
-                'default'    => 'pending',
+            'description' => [ // Deskripsi/catatan untuk order
+                'type' => 'TEXT',
+                'null' => true,
+            ],
+            // Kolom untuk Payment Gateway (Xendit, dll)
+            'external_id' => [ // ID unik yang Anda kirim ke payment gateway
+                'type'       => 'VARCHAR',
+                'constraint' => '255',
+                'unique'     => true,
+            ],
+            'payment_status' => [
+                'type'       => 'VARCHAR',
+                'constraint' => '50',
+                'default'    => 'PENDING', // Sesuaikan dengan status dari Xendit (e.g., PENDING, PAID, EXPIRED)
+            ],
+            'invoice_url' => [ // URL invoice dari payment gateway
+                'type'       => 'VARCHAR',
+                'constraint' => '255',
+                'null'       => true,
+            ],
+            'payment_method' => [ // Misal: 'CREDIT_CARD', 'VIRTUAL_ACCOUNT'
+                'type'       => 'VARCHAR',
+                'constraint' => '100',
+                'null'       => true,
             ],
             'created_at' => [
                 'type' => 'TIMESTAMP',
