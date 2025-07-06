@@ -80,6 +80,15 @@
                                 <label class="form-label" for="basic-default-fullname">Name</label>
                                 <input type="text" name="harga" class="form-control" id="harga" value="" placeholder="Harga Barang" required>
                             </div>
+                            <div class="mb-4">
+                        <label for="exampleFormControlSelect1" class="form-label">Category</label>
+                        <select class="form-select" id="exampleFormControlSelect1" aria-label="Default select example">
+                            <option selected>Open this select menu</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
+                      </div>
                             <div class="form-group">
                                 <label class="form-label" for="basic-default-fullname">Name</label>
                                 <input type="text" name="jumlah" class="form-control" id="jumlah" value="" placeholder="Jumlah Barang" required>
@@ -134,6 +143,15 @@
                                             <div class="mb-6">
                                                 <label class="form-label" for="basic-default-company">Stock</label>
                                                 <input type="text" class="form-control" id="basic-default-company" />
+                                            </div>
+                                            <div class="mb-4">
+                                                <label for="exampleFormControlSelect1" class="form-label">Category</label>
+                                                    <select class="form-select" id="exampleFormControlSelect1" aria-label="Default select example">
+                                                    <option selected>Open this select menu</option>
+                                                    <option value="1">One</option>
+                                                    <option value="2">Two</option>
+                                                    <option value="3">Three</option>
+                                                </select>
                                             </div>
                                             
                                             <div class="mb-6">
