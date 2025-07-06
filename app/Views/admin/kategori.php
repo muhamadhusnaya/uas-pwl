@@ -9,33 +9,23 @@
                         <button type="button" class="btn rounded-pill btn-outline-success" data-bs-toggle="modal" data-bs-target="#addModal">
                             <span class="icon-base bx bx-plus icon-sm me-2"></span>Tambah
                         </button>
-                        <button type="button" class="btn rounded-pill btn-outline-primary" >
-                            <span class="icon-base bx bx-download icon-sm me-2"></span>Download
-                        </button>
 
                         <div class="demo-inline-spacing">
                             <table class="table">
                     <thead class="table-light">
                       <tr>
-                        <th>Name</th>
-                        <th>Price</th>
-                        <th>Stock</th>
-                        <th>Category</th>
-                        <th>Status</th>
-                        <th>Image</th>
+                        <th>Name Category</th>
+                        <th>Slug</th>
+                        <th>img</th>
                         <th>Action</th>
                       </tr>
                     </thead>
                     <tbody class="table-border-bottom-0">
-                      <tr>
+                    <tr>
                         <td>
-                          <span class="app-brand-text demo menu-text fw-medium ms-1" style="font-size : 14px">Susu Kedelai Organik</span>
+                            <span class="app-brand-text demo menu-text fw-medium ms-1" style="font-size : 14px">Minuman Kesehatan</span>
                         </td>
-                        <td>1.900.000</td>
-                        <td>19</td>
-                        <td>Minuman Kesehatan</td>
-                        </td>
-                        <td><span class="badge text-bg-success">Ready</span></td>
+                        <td>produk-minuman-kesehatan</td>
                         <td>
 
                         </td>
@@ -46,14 +36,11 @@
                       </tr>
                       <tr>
                         <td>
-                            <span class="app-brand-text demo menu-text fw-medium ms-1" style="font-size : 14px">Apple Orcant</span>
+                            <span class="app-brand-text demo menu-text fw-medium ms-1" style="font-size : 14px">Serum</span>
                         </td>
-                        <td>90.000</td>
-                        <td>190</td>
-                        <td>Minuman Kesehatan</td>
-                        <td><span class="badge text-bg-warning">Out Of Stock</span></td>
+                        <td>produk-serum</td>
                         <td>
-                            
+
                         </td>
                         <td>
                             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editModal" style="margin-right : 10px">Edit</button>
@@ -73,16 +60,12 @@
                         <?= csrf_field(); ?>
                         <div class="modal-body">
                             <div class="form-group">
-                                <label class="form-label" for="basic-default-fullname">Name</label>
+                                <label class="form-label" for="basic-default-fullname">Name Category</label>
                                 <input type="text" name="nama" class="form-control" id="nama" value="" placeholder="Nama Barang" required>
                             </div>
                             <div class="form-group">
-                                <label class="form-label" for="basic-default-fullname">Name</label>
+                                <label class="form-label" for="basic-default-fullname">Slug</label>
                                 <input type="text" name="harga" class="form-control" id="harga" value="" placeholder="Harga Barang" required>
-                            </div>
-                            <div class="form-group">
-                                <label class="form-label" for="basic-default-fullname">Name</label>
-                                <input type="text" name="jumlah" class="form-control" id="jumlah" value="" placeholder="Jumlah Barang" required>
                             </div>
                             <img src="<?php echo base_url() . "img/"?>" width="100px">
                             <div class="form-check">
@@ -124,21 +107,12 @@
                                             <form action="<?= base_url('produk') ?>" method="post" enctype="multipart/form-data">
                                             <?= csrf_field(); ?>
                                             <div class="mb-6">
-                                                <label class="form-label" for="basic-default-fullname">Name</label>
+                                                <label class="form-label" for="basic-default-fullname">Name Category</label>
                                                 <input type="text" class="form-control" id="basic-default-fullname"/>
                                             </div>
                                             <div class="mb-6">
-                                                <label class="form-label" for="basic-default-company">Price</label>
+                                                <label class="form-label" for="basic-default-company">Slug</label>
                                                 <input type="text" class="form-control" id="basic-default-company"/>
-                                            </div>
-                                            <div class="mb-6">
-                                                <label class="form-label" for="basic-default-company">Stock</label>
-                                                <input type="text" class="form-control" id="basic-default-company" />
-                                            </div>
-                                            
-                                            <div class="mb-6">
-                                                <label class="form-label" for="basic-default-phone">Status</label>
-                                                <input type="text" id="basic-default-phone" class="form-control phone-mask" placeholder="658 799 8941" />
                                             </div>
                                             <div class="mb-6">
                                                 <label class="form-label" for="basic-default-message">Image</label>
