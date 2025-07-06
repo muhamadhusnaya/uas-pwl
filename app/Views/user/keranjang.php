@@ -1,7 +1,6 @@
 <?= $this->extend('layout/layout_user') ?>
 <?= $this->section('content') ?>
 
-<form action="" method="">
 <div class="container-xxl flex-grow-1 container-p-y">
 <div class="card" style="margin-bottom:10px">
             <h5 class="card-header">Cart</h5>
@@ -41,13 +40,14 @@
 </div>
 </div>
 <br>
+
 <div class="col-xl">
     <div class="card">
     <div class="card-header d-flex justify-content-between align-items-center">
         <h5 class="mb-0">Checkout</h5>
     </div>
     <div class="card-body">
-        <form>
+    <form action="" method="">
         <div class="mb-6">
         <label for="username" class="form-label">Username</label>
         <input
@@ -56,13 +56,13 @@
             id="username"
             value="@username"
             aria-label="username input example"
+            name="username"
             readonly />
         </div>
         <div class="mb-6">
             <label class="form-label" for="basic-default-company">Shipping Address</label>
-            <input type="text" class="form-control" id="address" placeholder="Input Address" />
+            <input type="text" class="form-control" id="address" placeholder="Input Address" name="shipping_address" />
         </div>
-        </form>
     </div>
     </div>
     <br>
@@ -83,6 +83,7 @@
         <span class="icon-base bx bx-chart icon-sm me-2"></span>Update Cart
         </button>
     </a>
+    </form>
 </div>
 </div>
 </form>
