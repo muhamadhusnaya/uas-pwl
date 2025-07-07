@@ -2,8 +2,18 @@
 
 namespace App\Controllers;
 
+use App\Models\ProductModel;
+
 class Home extends BaseController
 {
+    protected $product;
+
+    public function __construct()
+    {
+        $this->product = new ProductModel();
+    }
+
+
     public function index(): string
     {
         return view('admin/dashboard');
@@ -11,7 +21,10 @@ class Home extends BaseController
 
     public function home(): string
     {
-        return view('user/home');
+        $dataProduk = [
+            'produk' => $this->product->getProductWithCategories(),
+        ];
+        return view('user/home', $dataProduk);
     }
 
 }
