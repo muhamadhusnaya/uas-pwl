@@ -16,7 +16,7 @@ class UsersModel extends Model
         'username',
         'email',
         'password',
-        'remember_token',
+        'role',
         'email_verified_at',
     ];
 

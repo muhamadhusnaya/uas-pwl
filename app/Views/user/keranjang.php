@@ -79,7 +79,7 @@
                         <tfoot>
                             <tr>
                                 <th colspan="4" class="text-end">Total:</th>
-                                <th>Rp. <?= number_format($total, 0, ',', '.') ?></th>
+                                <th>Rp. <?= number_format($total, 0, ',', '.') ?>.000</th>
                                 <th></th>
                             </tr>
                         </tfoot>

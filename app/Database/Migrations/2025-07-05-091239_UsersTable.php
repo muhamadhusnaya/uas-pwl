@@ -32,6 +32,12 @@ class UsersTable extends Migration
                 'type'       => 'VARCHAR',
                 'constraint' => '255',
             ],
+            'role' => [
+                'type'       => 'VARCHAR',
+                'constraint' => '20',
+                'default'    => 'guest',
+                'null'       => false,
+            ],
             'created_at' => [
                 'type' => 'TIMESTAMP',
                 'null' => true,
