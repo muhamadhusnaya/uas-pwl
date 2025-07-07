@@ -47,7 +47,7 @@ $routes->group('admin', ['filter' => 'admin'], function ($routes) {
     $routes->delete('produk/delete/(:any)', 'ProductController::delete/$1');
 
     // Order Management
-    $routes->get('order', 'ProductController::order');
+    $routes->get('order', 'OrdersController::index');
 
     // Category Management
     $routes->get('kategori', 'CategoryController::index');

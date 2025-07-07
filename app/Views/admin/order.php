@@ -14,45 +14,17 @@
               <th>Price</th>
               <th>Amount</th>
               <th>SubTotal</th>
-              <th>Action</th>
             </tr>
           </thead>
           <tbody class="table-border-bottom-0">
-            <tr>
-              <td><span class="app-brand-text demo menu-text fw-medium ms-1" style="font-size : 14px">Susu Kedelai Organik</span></td>
-              <td>1.900.000</td>
-              <td>1</td>
-              <td>1.900.000</td>
-              <td>
-                <div class="dropdown">
-                  <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
-                    <i class="icon-base bx bx-dots-vertical-rounded"></i>
-                  </button>
-                  <div class="dropdown-menu">
-                    <a class="dropdown-item" href="javascript:void(0);"><i class="icon-base bx bx-edit-alt me-1"></i> Edit</a>
-                    <a class="dropdown-item" href="javascript:void(0);"><i class="icon-base bx bx-trash me-1"></i> Delete</a>
-                  </div>
-                </div>
-              </td>
-            </tr>
-            <tr>
-
-              <td><span class="app-brand-text demo menu-text fw-medium ms-1" style="font-size : 14px">Apple Orcant</span></td>
-              <td>90.000</td>
-              <td>2</td>
-              <td>180.000</td>
-              <td>
-                <div class="dropdown">
-                  <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
-                    <i class="icon-base bx bx-dots-vertical-rounded"></i>
-                  </button>
-                  <div class="dropdown-menu">
-                    <a class="dropdown-item" href="javascript:void(0);"><i class="icon-base bx bx-edit-alt me-1"></i> Edit</a>
-                    <a class="dropdown-item" href="javascript:void(0);"><i class="icon-base bx bx-trash me-1"></i> Delete</a>
-                  </div>
-                </div>
-              </td>
-            </tr>
+            <?php foreach ($order as $item) : ?>
+              <tr>
+                <td><span class="app-brand-text demo menu-text fw-medium ms-1" style="font-size : 14px"><?= esc($item['name']) ?></span></td>
+                <td><?= number_to_currency($item['price'], 'IDR', 'id_ID', 2) ?></td>
+                <td><?= esc($item['amount']) ?></td>
+                <td><?= number_to_currency($item['subtotal'], 'IDR', 'id_ID', 2) ?></td>
+              </tr>
+            <?php endforeach; ?>
           </tbody>
         </table>
       </div>

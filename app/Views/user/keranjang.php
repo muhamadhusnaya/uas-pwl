@@ -117,27 +117,12 @@
                                 rows="3"
                                 required></textarea>
                         </div>
-                        <div class="mb-6">
-                            <label class="form-label" for="phone">Phone Number</label>
-                            <input type="tel" class="form-control" id="phone"
-                                placeholder="Masukkan nomor telepon"
-                                name="phone"
-                                required />
-                        </div>
-                        <div class="mb-6">
-                            <label class="form-label" for="notes">Notes (Optional)</label>
-                            <textarea class="form-control" id="notes"
-                                placeholder="Catatan tambahan untuk pesanan"
-                                name="notes"
-                                rows="2"></textarea>
-                        </div>
-
                         <div class="d-flex gap-2 flex-wrap">
                             <button type="submit" class="btn rounded-pill btn-outline-success">
                                 <span class="icon-base bx bx-cart icon-sm me-2"></span>Finish Payment
                             </button>
 
-                            <a href="<?= base_url('user/home') ?>" class="btn rounded-pill btn-outline-primary">
+                            <a href="<?= base_url('/home') ?>" class="btn rounded-pill btn-outline-primary">
                                 <span class="icon-base bx bx-plus icon-sm me-2"></span>Buy More
                             </a>
 
