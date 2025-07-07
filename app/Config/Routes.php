@@ -10,9 +10,14 @@ use CodeIgniter\Router\RouteCollection;
 $routes->get('/', 'Home::home');
 $routes->get('/login-user', 'AuthController::viewLoginUser');
 $routes->get('/register-user', 'AuthController::viewRegisterUser');
-// $routes->get('/home', 'AuthController::viewLoginUser');
-$routes->get('/keranjang', 'ProductController::keranjang');
 
+// Cart Routes
+$routes->get('/keranjang', 'OrdersController::keranjang');
+$routes->post('/keranjang/add', 'OrdersController::cart_add');
+$routes->post('/keranjang/update', 'OrdersController::cart_update');
+$routes->get('/keranjang/remove/(:segment)', 'OrdersController::cart_remove/$1');
+$routes->get('/keranjang/clear', 'OrdersController::cart_clear');
+$routes->post('/keranjang/process', 'OrdersController::process_order');
 
 // Admin Routes
 $routes->get('/login-admin', 'AuthController::viewLoginAdmin');
