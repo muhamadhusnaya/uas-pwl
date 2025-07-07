@@ -27,17 +27,9 @@ class ProductsTable extends Migration
                 'type'       => 'DECIMAL',
                 'constraint' => '10,2',
             ],
-            'slug' => [
+            'images' => [
                 'type'       => 'VARCHAR',
                 'constraint' => '255',
-                'unique'     => true,
-            ],
-            'images' => [
-                'type' => 'JSON',
-                'null' => true,
-            ],
-            'description' => [
-                'type' => 'TEXT',
                 'null' => true,
             ],
             'category_id' => [

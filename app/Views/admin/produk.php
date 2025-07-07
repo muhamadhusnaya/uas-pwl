@@ -3,160 +3,156 @@
 
 <div class="container-xxl flex-grow-1 container-p-y">
     <div class="card">
-                <h5 class="card-header">Product</h5>
-                
-                <div class="table-responsive text-nowrap">
-                        <button type="button" class="btn rounded-pill btn-outline-success" data-bs-toggle="modal" data-bs-target="#addModal">
-                            <span class="icon-base bx bx-plus icon-sm me-2"></span>Tambah
-                        </button>
-                        <button type="button" class="btn rounded-pill btn-outline-primary" >
-                            <span class="icon-base bx bx-download icon-sm me-2"></span>Download
-                        </button>
+        <h5 class="card-header">Product</h5>
 
-                        <div class="demo-inline-spacing">
-                            <table class="table">
+        <div class="table-responsive text-nowrap">
+            <button type="button" class="btn rounded-pill btn-outline-success" data-bs-toggle="modal" data-bs-target="#addModal">
+                <span class="icon-base bx bx-plus icon-sm me-2"></span>Tambah
+            </button>
+            <button type="button" class="btn rounded-pill btn-outline-primary">
+                <span class="icon-base bx bx-download icon-sm me-2"></span>Download
+            </button>
+
+            <div class="demo-inline-spacing">
+                <table class="table">
                     <thead class="table-light">
-                      <tr>
-                        <th>Name</th>
-                        <th>Price</th>
-                        <th>Stock</th>
-                        <th>Category</th>
-                        <th>Status</th>
-                        <th>Image</th>
-                        <th>Action</th>
-                      </tr>
+                        <tr>
+                            <th>Name</th>
+                            <th>Price</th>
+                            <th>Stock</th>
+                            <th>Category</th>
+                            <th>Image</th>
+                            <th>Action</th>
+                        </tr>
                     </thead>
                     <tbody class="table-border-bottom-0">
-                      <tr>
-                        <td>
-                          <span class="app-brand-text demo menu-text fw-medium ms-1" style="font-size : 14px">Susu Kedelai Organik</span>
-                        </td>
-                        <td>1.900.000</td>
-                        <td>19</td>
-                        <td>Minuman Kesehatan</td>
-                        </td>
-                        <td><span class="badge text-bg-success">Ready</span></td>
-                        <td>
+                        <?php foreach ($produk as $item) : ?>
+                            <tr>
+                                <td>
+                                    <span class="app-brand-text demo menu-text fw-medium ms-1" style="font-size : 14px"><?= esc($item['name']) ?></span>
+                                </td>
+                                <td>Rp. <?= number_format($item['price'], 0, ',', '.') ?>.000</td>
+                                <td><?= esc($item['stock']) ?></td>
+                                <td><?= esc($item['category_name']) ?></td>
+                                <td>
+                                    <?php if (!empty($item['images'])) : ?>
+                                        <img src="<?= base_url('img/produk/' . $item['images']) ?>" alt="<?= esc($item['name']) ?>" width="50">
+                                    <?php endif; ?>
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editModal<?= $item['id'] ?>" style="margin-right : 10px">Edit</button>
+                                    <form method="post" action="<?= base_url('admin/produk/delete/' . $item['id']) ?>" style="display: inline;">
+                                        <?= csrf_field(); ?>
+                                        <input type="hidden" name="_method" value="DELETE">
+                                        <button type="submit" class="btn btn-danger" onclick="return confirm('Yakin hapus data ini ?')">Delete</button>
+                                    </form>
+                                </td>
+                            </tr>
 
-                        </td>
-                        <td>
-                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editModal" style="margin-right : 10px">Edit</button>
-                            <button type="button" class="btn btn-danger">Delete</button>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                            <span class="app-brand-text demo menu-text fw-medium ms-1" style="font-size : 14px">Apple Orcant</span>
-                        </td>
-                        <td>90.000</td>
-                        <td>190</td>
-                        <td>Minuman Kesehatan</td>
-                        <td><span class="badge text-bg-warning">Out Of Stock</span></td>
-                        <td>
-                            
-                        </td>
-                        <td>
-                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editModal" style="margin-right : 10px">Edit</button>
-                            <button type="button" class="btn btn-danger">Delete</button>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-            <div class="modal fade" id="editModal" tabindex="-1">
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title">Edit Data</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <form action="<?= base_url('produk/edit/')?>" method="post" enctype="multipart/form-data">
-                        <?= csrf_field(); ?>
-                        <div class="modal-body">
-                            <div class="form-group">
-                                <label class="form-label" for="basic-default-fullname">Name</label>
-                                <input type="text" name="nama" class="form-control" id="nama" value="" placeholder="Nama Barang" required>
-                            </div>
-                            <div class="form-group">
-                                <label class="form-label" for="basic-default-fullname">Name</label>
-                                <input type="text" name="harga" class="form-control" id="harga" value="" placeholder="Harga Barang" required>
-                            </div>
-                            <div class="form-group">
-                                <label class="form-label" for="basic-default-fullname">Name</label>
-                                <input type="text" name="jumlah" class="form-control" id="jumlah" value="" placeholder="Jumlah Barang" required>
-                            </div>
-                            <img src="<?php echo base_url() . "img/"?>" width="100px">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" id="check" name="check" value="1">
-                                <label class="form-check-label" for="check">
-                                    If Want Change Image
-                                </label>
-                            </div>
-                            <div class="form-group">
-                                <label for="name">Foto</label>
-                                <input type="file" class="form-control" id="foto" name="foto">
-                            </div>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button type="submit" class="btn btn-primary">Simpan</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-        <!-- Edit Modal End -->
-            <div class="modal fade" id="addModal" tabindex="-1">
-                <div class="modal-dialog modal-dialog-centered">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title">Add</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        
-                        <div class="container-xxl flex-grow-1 container-p-y">
-                        <!-- Basic Layout -->
-                            <div class="row mb-6 gy-6">
-                                <div class="col-xl">
-                                    <div class="card">
-                                        <div class="card-header d-flex justify-content-between align-items-center">
+                            <!-- Modal Edit untuk setiap item -->
+                            <div class="modal fade" id="editModal<?= $item['id'] ?>" tabindex="-1">
+                                <div class="modal-dialog modal-dialog-centered">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title">Edit Data</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                         </div>
-                                        <div class="card-body">
-                                            <form action="<?= base_url('produk') ?>" method="post" enctype="multipart/form-data">
+                                        <form action="<?= base_url('admin/produk/update/' . $item['id']) ?>" method="post" enctype="multipart/form-data">
                                             <?= csrf_field(); ?>
-                                            <div class="mb-6">
-                                                <label class="form-label" for="basic-default-fullname">Name</label>
-                                                <input type="text" class="form-control" id="basic-default-fullname"/>
+                                            <div class="modal-body">
+                                                <div class="mb-3">
+                                                    <label class="form-label" for="name">Name</label>
+                                                    <input type="text" class="form-control" name="name" id="name" value="<?= esc($item['name']) ?>" required />
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label class="form-label" for="price">Price</label>
+                                                    <input type="number" class="form-control" name="price" id="price" value="Rp. <?= number_format($item['price'], 0, ',', '.') ?>" required />
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label class="form-label" for="stok">Stock</label>
+                                                    <input type="number" class="form-control" name="stock" id="stok" value="<?= esc($item['stock']) ?>" required />
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="category_id" class="form-label">Category</label>
+                                                    <select class="form-select" name="category_id" id="category_id" required>
+                                                        <option value="">Select Category</option>
+                                                        <?php foreach ($categories as $category) : ?>
+                                                            <option value="<?= $category['id'] ?>"><?= esc($category['category_type']) ?></option>
+                                                        <?php endforeach ?>
+                                                    </select>
+                                                </div>
+                                                <?php if (!empty($item['image'])) : ?>
+                                                    <div class="form-label mb-3">
+                                                        <label class="form-label">Current Image</label><br>
+                                                        <img src="<?= base_url('img/kategori/' . $item['image']) ?>" width="100px" alt="Current Image">
+                                                    </div>
+                                                <?php endif; ?>
+                                                <div class="form-group mb-3">
+                                                    <label class="form-label" for="image<?= $item['id'] ?>">New Image</label>
+                                                    <input type="file" class="form-control" name="image" id="image<?= $item['id'] ?>">
+                                                </div>
                                             </div>
-                                            <div class="mb-6">
-                                                <label class="form-label" for="basic-default-company">Price</label>
-                                                <input type="text" class="form-control" id="basic-default-company"/>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                <button type="submit" class="btn btn-primary">Update</button>
                                             </div>
-                                            <div class="mb-6">
-                                                <label class="form-label" for="basic-default-company">Stock</label>
-                                                <input type="text" class="form-control" id="basic-default-company" />
-                                            </div>
-                                            
-                                            <div class="mb-6">
-                                                <label class="form-label" for="basic-default-phone">Status</label>
-                                                <input type="text" id="basic-default-phone" class="form-control phone-mask" placeholder="658 799 8941" />
-                                            </div>
-                                            <div class="mb-6">
-                                                <label class="form-label" for="basic-default-message">Image</label>
-                                                <input type="file" class="form-control" id="foto" name="foto">
-                                            </div>
-                                            <button type="submit" class="btn btn-primary">Send</button>
-                                            </form>
-                                        </div>
+                                        </form>
                                     </div>
                                 </div>
                             </div>
+                        <?php endforeach ?>
+                    </tbody>
+                </table>
+
+                <!-- Modal Add -->
+                <div class="modal fade" id="addModal" tabindex="-1">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Add Product</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <form action="<?= base_url('admin/produk') ?>" method="post" enctype="multipart/form-data">
+                                    <?= csrf_field(); ?>
+                                    <div class="mb-3">
+                                        <label class="form-label" for="name">Name</label>
+                                        <input type="text" class="form-control" name="name" id="name" value="" required />
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label" for="price">Price</label>
+                                        <input type="number" class="form-control" name="price" id="price" value="" required />
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label" for="stok">Stock</label>
+                                        <input type="number" class="form-control" name="stock" id="stok" value="" required />
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="category_id" class="form-label">Category</label>
+                                        <select class="form-select" name="category_id" id="category_id" required>
+                                            <option value="">Select Category</option>
+                                            <?php foreach ($categories as $category) : ?>
+                                                <option value="<?= $category['id'] ?>"><?= esc($category['category_type']) ?></option>
+                                            <?php endforeach ?>
+                                        </select>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label" for="image">Image</label>
+                                        <input type="file" class="form-control" name="image" id="image" required>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                        <button type="submit" class="btn btn-primary">Save</button>
+                                    </div>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>
+                <!-- Modal Add End -->
             </div>
         </div>
     </div>
 </div>
-</div>
-    
+
 <?= $this->endSection() ?>

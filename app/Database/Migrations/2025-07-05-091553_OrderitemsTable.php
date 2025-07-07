@@ -25,6 +25,7 @@ class OrderitemsTable extends Migration
                 'type'       => 'INT',
                 'constraint' => 11,
                 'unsigned'   => true,
+                'null'       => true, // Bisa NULL jika produk dihapus
             ],
             'quantity' => [
                 'type'       => 'INT',

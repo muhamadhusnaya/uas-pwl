@@ -16,9 +16,7 @@ class ProductModel extends Model
         'name',
         'stock',
         'price',
-        'slug',
         'images',
-        'description',
         'category_id',
     ];
 
@@ -27,4 +25,14 @@ class ProductModel extends Model
     protected $dateFormat    = 'datetime';
     protected $createdField  = 'created_at';
     protected $updatedField  = 'updated_at';
+
+    public function getProductWithCategories()
+    {
+        // Gunakan Query Builder untuk membuat query JOIN
+        return $this->db->table('products')
+            ->select('products.*, categories.category_type as category_name') // Pilih semua kolom dari products dan kolom category_name dari categories
+            ->join('categories', 'categories.id = products.category_id') // Kondisi JOIN
+            ->get()
+            ->getResultArray(); // Ambil hasilnya sebagai array
+    }
 }

@@ -21,12 +21,14 @@ class CategoriesTable extends Migration
                 'unique'     => true,
             ],
             'image' => [
-                'type' => 'JSON',
+                'type'       => 'VARCHAR',
+                'constraint' => '255',
                 'null' => true,
             ],
             'category_type' => [
-                'type'       => 'ENUM',
-                'constraint' => ['obat kesehatan', 'serum kesehatan'],
+                'type'       => 'VARCHAR',
+                'constraint' => '255',
+                'unique'     => true,
             ],
             'created_at' => [
                 'type' => 'TIMESTAMP',

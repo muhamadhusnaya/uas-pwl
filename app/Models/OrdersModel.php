@@ -18,8 +18,6 @@ class OrdersModel extends Model
         'customer_name',
         'shipping_address',
         'grand_total',
-        'shipping_cost',
-        'description',
         'external_id',
         'payment_status',
         'invoice_url',

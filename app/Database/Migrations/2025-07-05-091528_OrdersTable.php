@@ -39,14 +39,6 @@ class OrdersTable extends Migration
                 'type'       => 'DECIMAL',
                 'constraint' => '15,2',
             ],
-            'shipping_cost' => [
-                'type'       => 'DECIMAL',
-                'constraint' => '10,2',
-            ],
-            'description' => [ // Deskripsi/catatan untuk order
-                'type' => 'TEXT',
-                'null' => true,
-            ],
             // Kolom untuk Payment Gateway (Xendit, dll)
             'external_id' => [ // ID unik yang Anda kirim ke payment gateway
                 'type'       => 'VARCHAR',
