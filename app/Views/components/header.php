@@ -45,52 +45,64 @@
             <img src="<?= base_url() ?>/sneat-bootstrap-html-admin-template-free-v3.0.0/sneat-bootstrap-html-admin-template-free/assets/img/avatars/1.png" alt class="w-px-40 h-auto rounded-circle" />
           </div>
         </a>
-        <ul class="dropdown-menu dropdown-menu-end">
-          <li>
-            <a class="dropdown-item" href="#">
-              <div class="d-flex">
-                <div class="flex-shrink-0 me-3">
-                  <div class="avatar avatar-online">
-                    <img src="<?= base_url() ?>/sneat-bootstrap-html-admin-template-free-v3.0.0/sneat-bootstrap-html-admin-template-free/assets/img/avatars/1.png" alt class="w-px-40 h-auto rounded-circle" />
+        <?php if (session()->get('isLoggedIn')): ?>
+          <!-- Header untuk user yang sudah login -->
+          <ul class="dropdown-menu dropdown-menu-end">
+            <li>
+              <a class="dropdown-item" href="#">
+                <div class="d-flex">
+                  <div class="flex-shrink-0 me-3">
+                    <div class="avatar avatar-online">
+                      <img src="<?= base_url() ?>/sneat-bootstrap-html-admin-template-free-v3.0.0/sneat-bootstrap-html-admin-template-free/assets/img/avatars/1.png" alt class="w-px-40 h-auto rounded-circle" />
+                    </div>
+                  </div>
+                  <div class="flex-grow-1">
+                    <h6 class="mb-0"><?= session()->get('username') ?? 'User' ?></h6>
+                    <small class="text-body-secondary"><?= ucfirst(session()->get('role') ?? 'Member') ?></small>
                   </div>
                 </div>
-                <div class="flex-grow-1">
-                  <h6 class="mb-0">John Doe</h6>
-                  <small class="text-body-secondary">Admin</small>
-                </div>
-              </div>
+              </a>
+            </li>
+            <li>
+              <div class="dropdown-divider my-1"></div>
+            </li>
+            <li>
+              <a class="dropdown-item" href="#">
+                <i class="icon-base bx bx-user icon-md me-3"></i><span>My Profile</span>
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="#">
+                <i class="icon-base bx bx-cog icon-md me-3"></i><span>Settings</span>
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="#">
+                <span class="d-flex align-items-center align-middle">
+                  <i class="flex-shrink-0 icon-base bx bx-credit-card icon-md me-3"></i><span class="flex-grow-1 align-middle">Billing Plan</span>
+                  <span class="flex-shrink-0 badge rounded-pill bg-danger">4</span>
+                </span>
+              </a>
+            </li>
+            <li>
+              <div class="dropdown-divider my-1"></div>
+            </li>
+            <li>
+              <a class="dropdown-item" href="<?= base_url('logout') ?>">
+                <i class="icon-base bx bx-power-off icon-md me-3"></i><span>Log Out</span>
+              </a>
+            </li>
+          </ul>
+
+        <?php else: ?>
+          <!-- Header untuk user yang belum login -->
+          <div class="navbar-nav-right d-flex align-items-center">
+            <a href="<?= base_url('login-user') ?>" class="btn btn-primary">
+              <i class="bx bx-log-in-circle me-1"></i>
+              Login
             </a>
-          </li>
-          <li>
-            <div class="dropdown-divider my-1"></div>
-          </li>
-          <li>
-            <a class="dropdown-item" href="#">
-              <i class="icon-base bx bx-user icon-md me-3"></i><span>My Profile</span>
-            </a>
-          </li>
-          <li>
-            <a class="dropdown-item" href="#">
-              <i class="icon-base bx bx-cog icon-md me-3"></i><span>Settings</span>
-            </a>
-          </li>
-          <li>
-            <a class="dropdown-item" href="#">
-              <span class="d-flex align-items-center align-middle">
-                <i class="flex-shrink-0 icon-base bx bx-credit-card icon-md me-3"></i><span class="flex-grow-1 align-middle">Billing Plan</span>
-                <span class="flex-shrink-0 badge rounded-pill bg-danger">4</span>
-              </span>
-            </a>
-          </li>
-          <li>
-            <div class="dropdown-divider my-1"></div>
-          </li>
-          <li>
-            <a class="dropdown-item" href="login-admin">
-              <i class="icon-base bx bx-power-off icon-md me-3"></i><span>Log Out</span>
-            </a>
-          </li>
-        </ul>
+          </div>
+        <?php endif; ?>
       </li>
       <!--/ User -->
     </ul>

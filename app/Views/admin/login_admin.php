@@ -21,7 +21,7 @@
           <h4 class="mb-1">Welcome to Admin! 👋</h4>
           <p class="mb-6">Please sign-in to your account</p>
 
-          <form id="formAuthentication" class="mb-6" action="<?= base_url('login-admin') ?>">
+          <form class="mb-6" action="<?= base_url('login-admin') ?>" method="post">
             <div class="mb-6">
               <label for="email-username" class="form-label">Email or Username</label>
               <input
